@@ -5,10 +5,10 @@ dist: bionic
 
 matrix:
   include:
-    - dotnet: 2.1.502
+    - dotnet: 2.2
       mono: none
       os: linux
-    - dotnet: 2.1.502
+    - dotnet: 2.2
       mono: none
       os: osx
 
