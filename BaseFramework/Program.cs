@@ -1,11 +1,6 @@
-﻿using System;
-
-namespace BaseFramework
-{
-    class Program
-    {
-        static void Main(string[] args)
-        {
+﻿namespace BaseFramework {
+    class Program {
+        static void Main(string[] args) {
             
         }
     }
