@@ -13,4 +13,5 @@ matrix:
       os: osx
 
 script:
-  - ls
+  - dotnet --version
+  - dotnet test
