@@ -1,0 +1,17 @@
+language: csharp
+sudo: required
+solution: BaseFramework.sln
+dist: bionic
+
+matrix:
+  include:
+    - dotnet: 2.2.204
+      mono: none
+      os: linux
+    - dotnet: 2.2.204
+      mono: none
+      os: osx
+
+script:
+  - dotnet --version
+  - dotnet test
