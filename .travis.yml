@@ -1,13 +1,14 @@
 language: csharp
 sudo: required
-dist: trusty
+solution: BaseFramework.sln
+dist: bionic
 
 matrix:
   include:
-    - dotnet: latest
+    - dotnet: 2.1.502
       mono: none
       os: linux
-    - dotnet: latest
+    - dotnet: 2.1.502
       mono: none
       os: osx
     - mono: latest
