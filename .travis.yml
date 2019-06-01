@@ -11,10 +11,6 @@ matrix:
     - dotnet: 2.1.502
       mono: none
       os: osx
-    - mono: latest
-      os: linux
-    - mono: latest
-      os: osx
 
 script:
   - ls
