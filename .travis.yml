@@ -1,0 +1,19 @@
+language: csharp
+sudo: required
+dist: trusty
+
+matrix:
+  include:
+    - dotnet: 2.2.300
+      mono: none
+      os: linux
+    - dotnet: 2.2.300
+      mono: none
+      os: osx
+    - mono: latest
+      os: linux
+    - mono: latest
+      os: osx
+
+script:
+  - ls
