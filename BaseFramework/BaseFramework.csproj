@@ -7,14 +7,22 @@
 
     <ItemGroup>
       <PackageReference Include="Dapper" Version="1.60.6" />
+      <PackageReference Include="Microsoft.Extensions.Configuration" Version="3.0.0-preview5.19227.9" />
+      <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="3.0.0-preview5.19227.9" />
+      <PackageReference Include="Nancy.Hosting.Self" Version="2.0.0" />
       <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
+      <PackageReference Include="NLog" Version="4.6.4" />
       <PackageReference Include="Npgsql" Version="4.0.7" />
     </ItemGroup>
 
     <ItemGroup>
       <Folder Include="Scripts\AL" />
-      <Folder Include="Scripts\DL\Modules\Config" />
+      <Folder Include="Scripts\DL\Model" />
       <Folder Include="Scripts\PL" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Content Include="bin\Debug\netcoreapp2.2\config.json" />
     </ItemGroup>
 
 </Project>
