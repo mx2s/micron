@@ -1,5 +1,5 @@
 using System.Data;
-using BaseFramework.Scripts.DL.Module.Config;
+using Core.DL.Config;
 using Npgsql;
 
 namespace BaseFramework.Scripts.DL.Module.DB {

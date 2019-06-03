@@ -1,13 +1,13 @@
 using System;
 using Microsoft.Extensions.Configuration;
 
-namespace BaseFramework.Scripts.DL.Module.Config {
+namespace Core.DL.Config {
     public class AppConfig {
-        private string _dbHost;
-        private int _dbPort;
-        private string _dbUser;
-        private string _dbPassword;
-        private string _dbName;
+        private readonly string _dbHost;
+        private readonly int _dbPort;
+        private readonly string _dbUser;
+        private readonly string _dbPassword;
+        private readonly string _dbName;
         
         private static AppConfig _instance;
 

@@ -1,5 +1,5 @@
 ﻿using System;
-using BaseFramework.Scripts.DL.Module.Config;
+using Core.DL.Config;
 
 namespace BaseFramework {
     class Program {
