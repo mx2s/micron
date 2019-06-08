@@ -1,6 +1,6 @@
 using System;
-using BaseFramework.Scripts.DL.Model.User;
-using BaseFramework.Scripts.DL.Repository.User;
+using BaseFramework.DL.Model.User;
+using BaseFramework.DL.Repository.User;
 using NUnit.Framework;
 using Tests.Utils.DB;
 using Tests.Utils.Fake.User;

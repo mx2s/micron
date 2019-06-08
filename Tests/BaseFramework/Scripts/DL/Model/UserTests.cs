@@ -1,4 +1,4 @@
-using BaseFramework.Scripts.DL.Model.User;
+using BaseFramework.DL.Model.User;
 using NUnit.Framework;
 using Tests.Utils.DB;
 

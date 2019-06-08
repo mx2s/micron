@@ -8,6 +8,7 @@
     <ItemGroup>
       <PackageReference Include="Dapper" Version="1.60.6" />
       <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="3.0.0-preview5.19227.9" />
+      <PackageReference Include="Nancy" Version="2.0.0" />
       <PackageReference Include="Nancy.Hosting.Self" Version="2.0.0" />
       <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
       <PackageReference Include="NLog" Version="4.6.4" />
@@ -15,18 +16,39 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Scripts\DL\MiddlewareGroup" />
-      <Folder Include="Scripts\DL\Middleware\User" />
-      <Folder Include="Scripts\DL\Model" />
-      <Folder Include="Scripts\PL" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <Content Include="bin\Debug\netcoreapp2.2\config.json" />
+      <Folder Include="PL" />
     </ItemGroup>
 
     <ItemGroup>
       <ProjectReference Include="..\Core\Core.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Remove="bin\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <EmbeddedResource Remove="bin\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="bin\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <_OutputPathItem Remove="bin\Debug\netcoreapp2.2\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <AppConfigFileDestination Remove="bin\Debug\netcoreapp2.2\BaseFramework.dll.config" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <_DebugSymbolsOutputPath Remove="bin\Debug\netcoreapp2.2\BaseFramework.pdb" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <_ApplicationManifestFinal Remove="bin\Debug\netcoreapp2.2\BaseFramework.dll.manifest" />
     </ItemGroup>
 
 </Project>

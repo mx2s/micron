@@ -1,15 +1,18 @@
 ﻿using System;
-using BaseFramework.Scripts.DL.Model.User;
-using Core.DL.Config;
+using Nancy.Hosting.Self;
 
 namespace BaseFramework {
     class Program {
         static void Main(string[] args) {
-            var config = AppConfig.Get();
+            var host = new NancyHost(new Uri("http://localhost:8000"));
+            Console.WriteLine("starting server");
+            host.Start();
+            Console.WriteLine("server started");
+
+            Console.Write("Press enter to stop server...");
+            Console.ReadLine();
             
-            User.Create("somemmail@bk.de", "user2", "123");
-            
-            Console.WriteLine("yep");
+            host.Stop();
         }
     }
 }

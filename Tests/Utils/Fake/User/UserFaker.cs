@@ -1,6 +1,6 @@
 using System;
-using BaseFramework.Scripts.DL.Repository.User;
-using UserModel = BaseFramework.Scripts.DL.Model.User.User;
+using BaseFramework.DL.Repository.User;
+using UserModel = BaseFramework.DL.Model.User.User;
 
 namespace Tests.Utils.Fake.User {
     public static class UserFaker {
