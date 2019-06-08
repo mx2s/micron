@@ -11,6 +11,8 @@ namespace Core.DL.Config {
 
         private readonly string _jwtSecretKey;
         private readonly int _jwtTokenLifeDays;
+
+        private readonly string _encryptionKey;
         
         private static AppConfig _instance;
 
@@ -20,6 +22,8 @@ namespace Core.DL.Config {
                 .Build();
             _jwtSecretKey = config["auth:jwt:secret_key"];
             _jwtTokenLifeDays = Convert.ToInt32(config["auth:jwt:token_life_days"]);
+
+            _encryptionKey = config["auth:encryption_key"];
             
             _dbName = config["database:name"];
             _dbHost = config["database:host"];
@@ -41,5 +45,7 @@ namespace Core.DL.Config {
         public string GetJwtSecretKey() => _jwtSecretKey;
         
         public int GetJwtLifeDays() => _jwtTokenLifeDays;
+        
+        public string GetEncryptionKey() => _encryptionKey;
     }
 }

@@ -1,5 +1,6 @@
 using System;
 using System.Linq;
+using Core.DL.Crypto;
 using Dapper;
 
 // ReSharper disable InconsistentNaming
@@ -19,10 +20,11 @@ namespace BaseFramework.Scripts.DL.Model.User {
 
         public static int Count() => ExecuteScalarInt("SELECT count(*) FROM users WHERE id = @id LIMIT 1");
 
+        // TODO: add password encryption
         public static void Create(string email, string login, string password)
             => ExecuteSql(
-                "INSERT INTO public.users(email, login, password) VALUES (@email, @login, @password)"
-                , new {email, login, password}
+                "INSERT INTO public.users(guid, email, login, password) VALUES (@guid, @email, @login, @password)"
+                , new {guid = Guid.NewGuid().ToString(), email, login, password = Encryptor.Encrypt(password)}
             );
 
         public static User Find(int id)
