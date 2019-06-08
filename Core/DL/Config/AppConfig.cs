@@ -8,6 +8,9 @@ namespace Core.DL.Config {
         private readonly string _dbUser;
         private readonly string _dbPassword;
         private readonly string _dbName;
+
+        private readonly string _jwtSecretKey;
+        private readonly int _jwtTokenLifeDays;
         
         private static AppConfig _instance;
 
@@ -15,6 +18,9 @@ namespace Core.DL.Config {
             var config = new ConfigurationBuilder()
                 .AddJsonFile("config.json")
                 .Build();
+            _jwtSecretKey = config["auth:jwt:secret_key"];
+            _jwtTokenLifeDays = Convert.ToInt32(config["auth:jwt:token_life_days"]);
+            
             _dbName = config["database:name"];
             _dbHost = config["database:host"];
             _dbPort = Convert.ToInt32(config["database:port"]);
@@ -29,8 +35,11 @@ namespace Core.DL.Config {
             return _instance;
         }
 
-        public string GetConnectionString() {
-            return $"Host={_dbHost};Username={_dbUser};Password={_dbPassword};Database={_dbName}";
-        }
+        public string GetConnectionString() 
+            => $"Host={_dbHost};Username={_dbUser};Password={_dbPassword};Database={_dbName}";
+
+        public string GetJwtSecretKey() => _jwtSecretKey;
+        
+        public int GetJwtLifeDays() => _jwtTokenLifeDays;
     }
 }

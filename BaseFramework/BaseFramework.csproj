@@ -15,7 +15,8 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Scripts\AL" />
+      <Folder Include="Scripts\DL\MiddlewareGroup" />
+      <Folder Include="Scripts\DL\Middleware\User" />
       <Folder Include="Scripts\DL\Model" />
       <Folder Include="Scripts\PL" />
     </ItemGroup>
