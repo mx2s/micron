@@ -1,16 +1,26 @@
 using System;
 using BaseFramework.DL.Model.User;
 using BaseFramework.DL.Repository.User;
+using Core.DL.Misc;
 using NUnit.Framework;
 using Tests.Utils.DB;
 using Tests.Utils.Fake.User;
 
-namespace Tests.BaseFramework.Scripts.DL.Repository {
+namespace Tests.BaseFramework.DL.Repository {
     [TestFixture]
     public class UserRepositoryTests {
         [SetUp]
         public void SetUp() {
             DbCleaner.TruncateAll();
+        }
+
+        [Test]
+        public void Create_DataCorrect_Ok() {
+            var randomEmail = "somemail" + Randomizer.SmallInt() + "@root.com";
+            Assert.AreEqual(0,User.Count());
+            UserRepository.Create(randomEmail, "admin", "1234");
+            Assert.AreEqual(randomEmail, UserRepository.FindByEmail(randomEmail).email);
+            Assert.AreEqual(1,User.Count());
         }
         
         [Test]

@@ -2,7 +2,7 @@ using BaseFramework.DL.Model.User;
 using NUnit.Framework;
 using Tests.Utils.DB;
 
-namespace Tests.BaseFramework.Scripts.DL.Model {
+namespace Tests.BaseFramework.DL.Model {
     [TestFixture]
     public class UserTests {
         [SetUp]

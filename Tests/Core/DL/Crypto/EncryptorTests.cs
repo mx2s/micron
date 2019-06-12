@@ -17,5 +17,15 @@ namespace Tests.Core.DL.Crypto {
             var decrypted = Encryptor.Decrypt(encrypted);
             Assert.AreEqual(strToEncrypt, decrypted);
         }
+        
+        [Test]
+        public void Encrypt_DataCorrect_AbleToDecryptWithKey() {
+            var strToEncrypt = "some string";
+            var key = "somekey";
+            
+            var encrypted = Encryptor.Encrypt(strToEncrypt, key);
+            var decrypted = Encryptor.Decrypt(encrypted, key);
+            Assert.AreEqual(strToEncrypt, decrypted);
+        }
     }
 }

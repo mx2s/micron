@@ -20,7 +20,6 @@ namespace BaseFramework.DL.Model.User {
 
         public static int Count() => ExecuteScalarInt("SELECT count(*) FROM users WHERE id = @id LIMIT 1");
 
-        // TODO: add password encryption
         public static void Create(string email, string login, string password)
             => ExecuteSql(
                 "INSERT INTO public.users(guid, email, login, password) VALUES (@guid, @email, @login, @password)"

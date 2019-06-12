@@ -12,6 +12,9 @@ namespace Core.DL.Crypto {
         private const int DerivationIterations = 1000;
 
         public static string Encrypt(string text, string key = null) {
+            if (text.Length == 0) {
+                return null;
+            }
             if (key == null) {
                 key = AppConfig.Get().GetEncryptionKey();
             }
