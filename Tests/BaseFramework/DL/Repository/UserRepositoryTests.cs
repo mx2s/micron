@@ -1,7 +1,7 @@
 using System;
 using BaseFramework.DL.Model.User;
 using BaseFramework.DL.Repository.User;
-using Core.DL.Misc;
+using Core.DL.Module.Misc;
 using NUnit.Framework;
 using Tests.Utils.DB;
 using Tests.Utils.Fake.User;

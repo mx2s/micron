@@ -1,12 +1,12 @@
 using BaseFramework.DL.Module.Http;
 using BaseFramework.DL.Repository.User;
-using Core.DL.Auth;
-using Core.DL.Crypto;
+using Core.DL.Module.Auth;
+using Core.DL.Module.Crypto;
 using Nancy;
 using Newtonsoft.Json.Linq;
 
 namespace BaseFramework.AL.Controller.Auth {
-    public sealed class JwtAuthController : NancyModule {
+    public sealed class JwtAuthController : BaseController {
         public JwtAuthController() {
             Get("/api/v1/login", _ => {
                 var email = (string) Request.Query["email"];

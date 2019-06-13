@@ -2,10 +2,10 @@ using System;
 using System.IO;
 using System.Security.Cryptography;
 using System.Text;
-using Core.DL.Config;
+using Core.DL.Module.Config;
 
 // Used example from: https://stackoverflow.com/questions/10168240/encrypting-decrypting-a-string-in-c-sharp
-namespace Core.DL.Crypto {
+namespace Core.DL.Module.Crypto {
     public static class Encryptor {
         private const int Keysize = 256;
 

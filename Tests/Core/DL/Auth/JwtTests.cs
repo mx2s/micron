@@ -1,5 +1,5 @@
 using System;
-using Core.DL.Auth;
+using Core.DL.Module.Auth;
 using NUnit.Framework;
 
 namespace Tests.Core.DL.Auth {

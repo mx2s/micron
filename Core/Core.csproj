@@ -9,9 +9,14 @@
       <PackageReference Include="JWT" Version="5.1.1" />
       <PackageReference Include="Microsoft.Extensions.Configuration" Version="3.0.0-preview5.19227.9" />
       <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="3.0.0-preview5.19227.9" />
+      <PackageReference Include="Nancy" Version="2.0.0" />
       <PackageReference Include="Nancy.Hosting.Self" Version="2.0.0" />
       <PackageReference Include="Npgsql" Version="4.0.7" />
       <PackageReference Include="System.Security.Cryptography.Algorithms" Version="4.3.1" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="PL" />
     </ItemGroup>
 
 </Project>

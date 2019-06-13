@@ -1,8 +1,8 @@
 using System.Data;
-using Core.DL.Config;
+using Core.DL.Module.Config;
 using Npgsql;
 
-namespace BaseFramework.Scripts.DL.Module.DB {
+namespace Core.DL.Module.Db {
     public class DbConnection {
         private readonly IDbConnection _connection;
 

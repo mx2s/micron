@@ -1,3 +1,4 @@
+using Core.DL.Middleware;
 using Nancy;
 using Newtonsoft.Json.Linq;
 
@@ -17,7 +18,17 @@ namespace BaseFramework.DL.Module.Http {
             return response;
         }
 
-        public static Response SimpleError(string errorMessage, HttpStatusCode statusCode = HttpStatusCode.OK) {
+        public static Response SimpleReturnItem(string key, JObject data, HttpStatusCode statusCode = HttpStatusCode.OK) {
+            var response = (Response) new JObject() {
+                ["data"] = new JObject() {
+                    [key] = data
+                }
+            }.ToString();
+            response.StatusCode = statusCode;
+            return response;
+        }
+
+        public static Response SimpleError(string errorMessage, HttpStatusCode statusCode = HttpStatusCode.NotFound) {
             var response = (Response) new JObject() {
                 ["errors"] = new JArray() {
                     new JObject() {
@@ -28,5 +39,7 @@ namespace BaseFramework.DL.Module.Http {
             response.StatusCode = statusCode;
             return response;
         }
+
+        public static Response SimpleError(MiddlewareError error) => SimpleError(error.Message, error.StatusCode);
     }
 }

@@ -1,4 +1,4 @@
-using Core.DL.Config;
+using Core.DL.Module.Config;
 using NUnit.Framework;
 using Tests.Utils.DB;
 

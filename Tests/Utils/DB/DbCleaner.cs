@@ -1,4 +1,4 @@
-using BaseFramework.Scripts.DL.Module.DB;
+using Core.DL.Module.Db;
 using Dapper;
 
 namespace Tests.Utils.DB {

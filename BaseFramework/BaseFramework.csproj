@@ -16,6 +16,7 @@
     </ItemGroup>
 
     <ItemGroup>
+      <Folder Include="AL\Logic" />
       <Folder Include="PL" />
     </ItemGroup>
 

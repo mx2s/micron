@@ -1,7 +1,7 @@
 using System;
 using Microsoft.Extensions.Configuration;
 
-namespace Core.DL.Config {
+namespace Core.DL.Module.Config {
     public class AppConfig {
         private readonly string _dbHost;
         private readonly int _dbPort;

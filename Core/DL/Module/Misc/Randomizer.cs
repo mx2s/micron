@@ -1,6 +1,6 @@
 using System;
 
-namespace Core.DL.Misc {
+namespace Core.DL.Module.Misc {
     public static class Randomizer {
         public static int SmallInt() => new Random().Next(UInt16.MaxValue);
         public static int Int() => new Random().Next();

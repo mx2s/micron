@@ -1,5 +1,5 @@
 using System.Data;
-using BaseFramework.Scripts.DL.Module.DB;
+using Core.DL.Module.Db;
 using Dapper;
 
 namespace Core.DL.Model {

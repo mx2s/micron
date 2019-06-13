@@ -1,4 +1,4 @@
-using Core.DL.Crypto;
+using Core.DL.Module.Crypto;
 using NUnit.Framework;
 
 namespace Tests.Core.DL.Crypto {
