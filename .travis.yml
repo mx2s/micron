@@ -3,13 +3,16 @@ sudo: required
 solution: BaseFramework.sln
 dist: bionic
 services:
-  - postgresql: "11"
+  - postgresql
 
 matrix:
   include:
     - dotnet: 2.2.204
       mono: none
       os: linux
+
+addons:
+  postgresql: "11"
 
 before_install:
   - sudo apt-get install -y software-properties-common
