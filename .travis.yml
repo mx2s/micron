@@ -12,7 +12,7 @@ matrix:
       os: linux
 
 before_install:
-  - sudo apt-get install -y php curl
+  - sudo apt-get install -y php7.3 curl
   - sudo curl -s https://getcomposer.org/installer | php
   - sudo mv composer.phar /usr/local/bin/composer
 
