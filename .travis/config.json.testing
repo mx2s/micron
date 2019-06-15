@@ -1,0 +1,23 @@
+{
+    "database": {
+    	"host": "localhost",
+        "name": "base_framework_testing",
+        "user": "postgres",
+        "port": 5432,
+        "password": ""
+    },
+    "auth": {
+        "encryption_key": "FDj1j322fDFJ2ivbrajhw",
+        "jwt": {
+            "secret_key": "GQDsD21j8s2zdm12F1f1k12",
+            "token_life_days": 7
+        }
+    },
+    "Logging": {
+        "LogLevel": {
+            "Default": "Debug",
+            "System": "Information",
+            "Microsoft": "Information"
+        }
+    }
+}
