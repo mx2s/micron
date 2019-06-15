@@ -1,25 +1,27 @@
 using System.Collections.Generic;
 using System.Linq;
 using BaseFramework.DL.Model.User;
-using Core.DL.Middleware;
+using Core.DL.Module.Http;
 using Nancy;
 
 namespace BaseFramework.DL.Module.Http {
     public class ProcessedRequest {
         public Request Request { get; }
-        public List<MiddlewareError> Errors { get; }
+        public List<HttpError> Errors { get; }
         
         public User User { get; set; }
 
+        public Response Response { get; set; }
+
         public ProcessedRequest(Request request) {
             Request = request;
-            Errors = new List<MiddlewareError>();
+            Errors = new List<HttpError>();
         }
 
         public bool HasErrors() => Errors.Count > 0;
 
-        public MiddlewareError FirstError => Errors.First();
+        public HttpError FirstError => Errors.First();
 
-        public void PushError(MiddlewareError error) => Errors.Add(error);
+        public void AddError(HttpError error) => Errors.Add(error);
     }
 }

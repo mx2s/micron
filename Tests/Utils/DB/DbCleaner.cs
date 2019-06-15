@@ -1,3 +1,4 @@
+using System.Linq;
 using Core.DL.Module.Db;
 using Dapper;
 
@@ -10,6 +11,7 @@ namespace Tests.Utils.DB {
             );
 
             var listOfTables = "";
+
 
             foreach (var table in tables) {
                 listOfTables += table + ",";

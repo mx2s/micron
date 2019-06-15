@@ -1,7 +1,7 @@
 using BaseFramework.DL.Module.Http;
 using BaseFramework.DL.Repository.User;
-using Core.DL.Middleware;
 using Core.DL.Module.Auth;
+using Core.DL.Module.Http;
 using Nancy;
 
 namespace BaseFramework.DL.Middleware.Auth {
@@ -15,8 +15,8 @@ namespace BaseFramework.DL.Middleware.Auth {
                 request.User = user;
             }
             else {
-                request.PushError(
-                    new MiddlewareError(HttpStatusCode.Unauthorized, "Invalid api_token")
+                request.AddError(
+                    new HttpError(HttpStatusCode.Unauthorized, "Invalid api_token")
                 );
             }
 

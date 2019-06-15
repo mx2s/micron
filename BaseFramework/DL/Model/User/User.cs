@@ -10,6 +10,8 @@ namespace BaseFramework.DL.Model.User {
 
         public int id;
 
+        public string guid;
+
         public string login;
 
         public string password;
@@ -17,15 +19,7 @@ namespace BaseFramework.DL.Model.User {
         public string email;
 
         public DateTime register_date;
-
-        public static int Count() => ExecuteScalarInt("SELECT count(*) FROM users WHERE id = @id LIMIT 1");
-
-        public static void Create(string email, string login, string password)
-            => ExecuteSql(
-                "INSERT INTO public.users(guid, email, login, password) VALUES (@guid, @email, @login, @password)"
-                , new {guid = Guid.NewGuid().ToString(), email, login, password = Encryptor.Encrypt(password)}
-            );
-
+        
         public static User Find(int id)
             => Connection().Query<User>(
                 "SELECT * FROM users WHERE id = @id LIMIT 1",
@@ -37,5 +31,13 @@ namespace BaseFramework.DL.Model.User {
                 "SELECT * FROM users WHERE email = @email LIMIT 1",
                 new {email}
             ).FirstOrDefault();
+
+        public static void Create(string email, string login, string password)
+            => ExecuteSql(
+                "INSERT INTO public.users(guid, email, login, password) VALUES (@guid, @email, @login, @password)"
+                , new {guid = Guid.NewGuid().ToString(), email, login, password = Encryptor.Encrypt(password)}
+            );
+        
+        public static int Count() => ExecuteScalarInt("SELECT count(*) FROM users WHERE id = @id LIMIT 1");
     }
 }

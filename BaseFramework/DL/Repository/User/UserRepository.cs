@@ -1,8 +1,7 @@
-using Core.DL.Model;
 using UserModel = BaseFramework.DL.Model.User.User;
 
 namespace BaseFramework.DL.Repository.User {
-    public class UserRepository : ModelRepository {
+    public static class UserRepository {
         public static UserModel Find(int id) {
             return UserModel.Find(id);
         }

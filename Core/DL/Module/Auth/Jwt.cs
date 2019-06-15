@@ -21,14 +21,13 @@ namespace Core.DL.Module.Auth {
 
         public static int GetUserIdFromToken(string token) {
             try {
-                var result = Convert.ToInt32(new JwtBuilder()
+                return Convert.ToInt32(new JwtBuilder()
                     .WithSecret(AppConfig.Get().GetJwtSecretKey())
                     .MustVerifySignature()
                     .Decode<IDictionary<string, object>>(token)["user_id"]);
             }
             catch (Exception e) {
             }
-
             return 0;
         }
     }
