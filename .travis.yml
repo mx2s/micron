@@ -3,7 +3,7 @@ sudo: required
 solution: BaseFramework.sln
 dist: bionic
 services:
-  - postgresql: "11.3"
+  - postgresql: "11"
 
 matrix:
   include:
