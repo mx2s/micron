@@ -38,6 +38,6 @@ namespace BaseFramework.DL.Model.User {
                 , new {guid = Guid.NewGuid().ToString(), email, login, password = Encryptor.Encrypt(password)}
             );
         
-        public static int Count() => ExecuteScalarInt("SELECT count(*) FROM users WHERE id = @id LIMIT 1");
+        public static int Count() => ExecuteScalarInt("SELECT count(*) FROM users WHERE id = @id");
     }
 }

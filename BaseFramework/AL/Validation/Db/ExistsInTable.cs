@@ -1,5 +1,3 @@
-using System;
-using System.Linq;
 using Core.DL.Module.Db;
 using Core.DL.Module.Http;
 using Core.DL.Module.Validator;
@@ -33,7 +31,8 @@ namespace BaseFramework.AL.Validation.Db {
 
             if (!result) {
                 return new HttpError(
-                    HttpStatusCode.NotFound, "Entity not found in table " + Custom["table"], Parameter
+                    HttpStatusCode.NotFound,
+                    $"Entity with specified {Custom["column"]} doesn't exist in table {Custom["table"]}", Parameter
                 );
             }
 

@@ -7,6 +7,7 @@ namespace BaseFramework.DL.Repository.Item {
         }
         
         public static ItemModel FindByGuid(string guid) {
+            
             return ItemModel.FindByGuid(guid);
         }
         
@@ -18,8 +19,12 @@ namespace BaseFramework.DL.Repository.Item {
             return ItemModel.Count();
         }
 
-        public static void Create(string title, double price) {
-            ItemModel.Create(title, price);
+        public static ItemModel CreateAndGet(string title, double price) {
+            return ItemModel.Find(Create(title, price));
+        }
+        
+        public static int Create(string title, double price) {
+            return ItemModel.Create(title, price);
         }
     }
 }

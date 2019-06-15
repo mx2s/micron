@@ -1,16 +1,15 @@
 using Core.PL.Transformer;
 using Newtonsoft.Json.Linq;
-using UserModel = BaseFramework.DL.Model.User.User;
+using ItemModel = BaseFramework.DL.Model.Item.Item;
 
-namespace BaseFramework.PL.Transformer.User {
+namespace BaseFramework.PL.Transformer.Item {
     public class ItemTransformer : BaseTransformer {
         public override JObject Transform(object obj) {
-            var item = (UserModel) obj;
+            var item = (ItemModel) obj;
             return new JObject {
                 ["guid"] = item.guid,
-                ["login"] = item.login,
-                ["email"] = item.email,
-                ["register_date"] = item.register_date
+                ["title"] = item.title,
+                ["price"] = item.price,
             };
         }
     }
