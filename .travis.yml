@@ -2,15 +2,29 @@ language: csharp
 sudo: required
 solution: BaseFramework.sln
 dist: bionic
+services:
+  - postgresql
 
 matrix:
   include:
     - dotnet: 2.2.204
       mono: none
       os: linux
-    - dotnet: 2.2.204
-      mono: none
-      os: osx
+
+before_install:
+  - sudo apt-get install -y php curl
+  - sudo curl -s https://getcomposer.org/installer | php
+  - sudo mv composer.phar /usr/local/bin/composer
+
+before_script:
+  - psql -c 'create database base_framework_test;' -U postgres
+
+  - cp .travis/phinx.yml.testing migrations/phinx.yml
+  - (cd migrations && composer install)
+  - (cd migrations && php vendor/bin/phinx migrate)
+
+  - mkdir -p Tests/bin/Debug/netcoreapp2.2
+  - cp .travis/config.json.testing Tests/bin/Debug/netcoreapp2.2/config.json
 
 script:
   - dotnet --version
