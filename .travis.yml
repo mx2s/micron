@@ -24,7 +24,7 @@ before_script:
 
   - cp .travis/phinx.yml.testing migrations/phinx.yml
   - (cd migrations && composer install)
-  - (cd migrations && php vendor/bin/phinx migrate)
+  - (cd migrations && php vendor/bin/phinx migrate -e testing)
 
   - mkdir -p Tests/bin/Debug/netcoreapp2.2
   - cp .travis/config.json.testing Tests/bin/Debug/netcoreapp2.2/config.json
