@@ -2,7 +2,6 @@ using System;
 using System.Linq;
 using BaseFramework.AL.Validation.Db;
 using BaseFramework.DL.Module.Validator;
-using Core.DL.Module.Validator;
 using Nancy;
 using NUnit.Framework;
 using Tests.Utils.DB;
