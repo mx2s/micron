@@ -6,8 +6,8 @@
 
     <ItemGroup>
       <PackageReference Include="Dapper" Version="1.60.6" />
-      <PackageReference Include="JWT" Version="5.1.1" />
-      <PackageReference Include="Microsoft.Extensions.Configuration" Version="3.0.0-preview5.19227.9" />
+      <PackageReference Include="JWT" Version="5.2.0" />
+      <PackageReference Include="Microsoft.Extensions.Configuration" Version="3.0.0-preview6.19304.6" />
       <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="3.0.0-preview5.19227.9" />
       <PackageReference Include="Nancy" Version="2.0.0" />
       <PackageReference Include="Nancy.Hosting.Self" Version="2.0.0" />
