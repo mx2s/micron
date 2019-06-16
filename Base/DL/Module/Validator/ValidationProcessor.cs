@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using Core.DL.Module.Http;
-using Core.DL.Module.Validator;
 using Nancy;
 
 namespace BaseFramework.DL.Module.Validator {

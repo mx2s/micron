@@ -1,6 +1,6 @@
 using BaseFramework.DL.Middleware;
 using BaseFramework.DL.Module.Http;
-using Core.DL.Module.Validator;
+using BaseFramework.DL.Module.Validator;
 using Nancy;
 
 namespace BaseFramework.DL.Module.Controller {

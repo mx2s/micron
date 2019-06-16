@@ -1,6 +1,6 @@
+using BaseFramework.DL.Module.Validator;
 using Core.DL.Module.Db;
 using Core.DL.Module.Http;
-using Core.DL.Module.Validator;
 using Dapper;
 using Nancy;
 using Newtonsoft.Json.Linq;

@@ -3,11 +3,11 @@ using BaseFramework.AL.Validation.Db;
 using BaseFramework.DL.Middleware;
 using BaseFramework.DL.Middleware.Auth;
 using BaseFramework.DL.Module.Controller;
+using BaseFramework.DL.Module.Http;
 using BaseFramework.DL.Module.Validator;
 using BaseFramework.DL.Repository.Item;
 using BaseFramework.PL.Transformer.Item;
 using Core.DL.Module.Http;
-using Core.DL.Module.Validator;
 
 namespace BaseFramework.AL.Controller.Item {
     public class ItemCrudController : BaseController {

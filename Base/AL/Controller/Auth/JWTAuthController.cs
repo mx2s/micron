@@ -1,5 +1,6 @@
 using BaseFramework.DL.Middleware;
 using BaseFramework.DL.Module.Controller;
+using BaseFramework.DL.Module.Http;
 using BaseFramework.DL.Repository.User;
 using Core.DL.Module.Auth;
 using Core.DL.Module.Crypto;

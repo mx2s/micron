@@ -3,7 +3,7 @@ using System.Linq;
 using Core.DL.Module.Db;
 using Dapper;
 
-namespace Core.DL.Model {
+namespace BaseFramework.DL.Model {
     public abstract class Model {
         protected static IDbConnection Connection() => DbConnection.Connection();
 

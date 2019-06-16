@@ -5,7 +5,7 @@ using Dapper;
 // ReSharper disable InconsistentNaming
 
 namespace BaseFramework.DL.Model.Item {
-    public class Item : Core.DL.Model.Model {
+    public class Item : Model {
         public int id;
 
         public string guid;

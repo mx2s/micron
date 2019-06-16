@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using Newtonsoft.Json.Linq;
 
-namespace Core.PL.Transformer {
+namespace BaseFramework.PL.Transformer {
     public abstract class BaseTransformer {
         public abstract JObject Transform(Object obj);
         

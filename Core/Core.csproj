@@ -15,8 +15,4 @@
       <PackageReference Include="System.Security.Cryptography.Algorithms" Version="4.3.1" />
     </ItemGroup>
 
-    <ItemGroup>
-      <Folder Include="PL" />
-    </ItemGroup>
-
 </Project>

@@ -1,9 +1,10 @@
 using System.Collections.Generic;
+using Core.DL.Module.Http;
 using Core.PL.Transformer.Http;
 using Nancy;
 using Newtonsoft.Json.Linq;
 
-namespace Core.DL.Module.Http {
+namespace BaseFramework.DL.Module.Http {
     public static class HttpResponse {
         public static Response Data(JObject data, HttpStatusCode statusCode = HttpStatusCode.OK) {
             var response = (Response) new JObject() {
