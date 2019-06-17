@@ -1,12 +1,10 @@
+using App.PL.User;
 using BaseFramework.DL.Middleware;
 using BaseFramework.DL.Middleware.Auth;
 using BaseFramework.DL.Module.Controller;
 using BaseFramework.DL.Module.Http;
-using BaseFramework.PL.Transformer.User;
-using Core.DL.Module.Http;
-using UserModel = BaseFramework.DL.Model.User.User;
 
-namespace BaseFramework.AL.Controller.User {
+namespace App.AL.Controller.User {
     public class MeController : BaseController {
         protected override IMiddleware[] Middleware() => new IMiddleware[] {
             new JwtMiddleware()

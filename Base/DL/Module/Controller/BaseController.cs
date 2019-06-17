@@ -1,6 +1,5 @@
 using BaseFramework.DL.Middleware;
 using BaseFramework.DL.Module.Http;
-using Core.DL.Module.Http;
 using Nancy;
 
 namespace BaseFramework.DL.Module.Controller {

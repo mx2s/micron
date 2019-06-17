@@ -1,8 +1,8 @@
-using Core.PL.Transformer;
+using BaseFramework.PL.Transformer;
 using Newtonsoft.Json.Linq;
 using UserModel = BaseFramework.DL.Model.User.User;
 
-namespace BaseFramework.PL.Transformer.User {
+namespace App.PL.User {
     public class UserTransformer : BaseTransformer {
         public override JObject Transform(object obj) {
             var item = (UserModel) obj;

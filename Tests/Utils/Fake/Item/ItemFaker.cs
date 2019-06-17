@@ -1,6 +1,6 @@
-using BaseFramework.DL.Repository.Item;
+using App.DL.Repository.Item;
 using Core.DL.Module.Misc;
-using ItemModel = BaseFramework.DL.Model.Item.Item;
+using ItemModel = App.DL.Model.Item.Item;
 
 namespace Tests.Utils.Fake.Item {
     public static class ItemFaker {

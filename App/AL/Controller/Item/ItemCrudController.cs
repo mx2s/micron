@@ -1,15 +1,13 @@
-using System;
+using App.DL.Repository.Item;
+using App.PL.Item;
 using BaseFramework.AL.Validation.Db;
 using BaseFramework.DL.Middleware;
 using BaseFramework.DL.Middleware.Auth;
 using BaseFramework.DL.Module.Controller;
 using BaseFramework.DL.Module.Http;
 using BaseFramework.DL.Module.Validator;
-using BaseFramework.DL.Repository.Item;
-using BaseFramework.PL.Transformer.Item;
-using Core.DL.Module.Http;
 
-namespace BaseFramework.AL.Controller.Item {
+namespace App.AL.Controller.Item {
     public class ItemCrudController : BaseController {
         protected override IMiddleware[] Middleware() => new IMiddleware[] {
             new JwtMiddleware()

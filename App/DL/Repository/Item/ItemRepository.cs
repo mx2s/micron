@@ -1,6 +1,6 @@
-using ItemModel = BaseFramework.DL.Model.Item.Item;
+using ItemModel = App.DL.Model.Item.Item;
 
-namespace BaseFramework.DL.Repository.Item {
+namespace App.DL.Repository.Item {
     public static class ItemRepository {
         public static ItemModel Find(int id) {
             return ItemModel.Find(id);

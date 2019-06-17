@@ -1,7 +1,7 @@
-using BaseFramework.DL.Repository.Item;
+using App.DL.Repository.Item;
 using NUnit.Framework;
 using Tests.Utils.DB;
-using ItemModel = BaseFramework.DL.Model.Item.Item;
+using ItemModel = App.DL.Model.Item.Item;
 
 namespace Tests.BaseFramework.DL.Repository.Item {
     [TestFixture]

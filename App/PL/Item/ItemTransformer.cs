@@ -1,8 +1,8 @@
-using Core.PL.Transformer;
+using BaseFramework.PL.Transformer;
 using Newtonsoft.Json.Linq;
-using ItemModel = BaseFramework.DL.Model.Item.Item;
+using ItemModel = App.DL.Model.Item.Item;
 
-namespace BaseFramework.PL.Transformer.Item {
+namespace App.PL.Item {
     public class ItemTransformer : BaseTransformer {
         public override JObject Transform(object obj) {
             var item = (ItemModel) obj;

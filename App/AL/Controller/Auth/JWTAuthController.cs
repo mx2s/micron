@@ -8,7 +8,7 @@ using Core.DL.Module.Http;
 using Nancy;
 using Newtonsoft.Json.Linq;
 
-namespace BaseFramework.AL.Controller.Auth {
+namespace App.AL.Controller.Auth {
     public sealed class JwtAuthController : BaseController {
         protected override IMiddleware[] Middleware() => new IMiddleware[] { };
 

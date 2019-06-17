@@ -6,7 +6,7 @@ using Dapper;
 // ReSharper disable InconsistentNaming
 
 namespace BaseFramework.DL.Model.User {
-    public class User : Model {
+    public class User : BaseFramework.DL.Model.Model {
 
         public int id;
 

@@ -16,4 +16,11 @@
       <ProjectReference Include="..\Base\Base.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="AL" />
+      <Folder Include="DL\Model" />
+      <Folder Include="DL\Repository" />
+      <Folder Include="PL" />
+    </ItemGroup>
+
 </Project>
