@@ -1,0 +1,16 @@
+{
+    "database": {
+    	"host": "localhost",
+        "name": "dbname",
+        "user": "dbuser",
+        "port": 5432,
+        "password": ""
+    },
+    "auth": {
+        "encryption_key": "J1XRgZ1RCVZZBrk",
+        "jwt": {
+            "secret_key": "GQDstcKsfFe12z2OHg3MfeJ1XT0uFiwDZzVBrk",
+            "token_life_days": 7
+        }
+    }
+}
