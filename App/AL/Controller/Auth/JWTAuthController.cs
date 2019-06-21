@@ -4,7 +4,6 @@ using BaseFramework.DL.Module.Http;
 using BaseFramework.DL.Repository.User;
 using Core.DL.Module.Auth;
 using Core.DL.Module.Crypto;
-using Core.DL.Module.Http;
 using Nancy;
 using Newtonsoft.Json.Linq;
 
