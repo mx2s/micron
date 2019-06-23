@@ -8,10 +8,11 @@ namespace Tests.Utils.DB {
             var connection = DbConnection.Connection();
             var tables = connection.Query<string>(
                 "SELECT table_name FROM information_schema.tables WHERE table_schema='public'"
-            );
+            ).ToList();
 
             var listOfTables = "";
 
+            tables.RemoveAll(x => x == "phinxlog");
 
             foreach (var table in tables) {
                 listOfTables += table + ",";
