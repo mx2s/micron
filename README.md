@@ -5,6 +5,8 @@
 ## Description
 Minimal .net core framework based on three tier architecture, can be used as template for building API's
 
+I've built this framework mostly for myself with all needed features out of the box, but this foundation can be more modular to have more potential use cases.
+
 ### Tech summary:
 **Supported databases:** PostgreSQL
 
