@@ -23,3 +23,13 @@ Minimal .net core framework based on three tier architecture, can be used as tem
 - WebServer: [Nancy](https://github.com/NancyFx/Nancy)
 - ORM: [Dapper(StackExchange)](https://github.com/StackExchange/Dapper)
 - Migrations: [Phinx(CakePHP)](https://github.com/cakephp/phinx)
+
+***
+
+### Set up:
+1. build project
+2. copy config.example.json into: 
+**For main app**
+2.1 App/bin/%BUILD_TYPE%/netcoreapp2.2/config/config.json
+**For unit tests**
+2.2 Tests/bin/%BUILD_TYPE%/netcoreapp2.2/config/config.json
