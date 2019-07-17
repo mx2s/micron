@@ -3,6 +3,7 @@ using BaseFramework.DL.Middleware;
 using BaseFramework.DL.Middleware.Auth;
 using BaseFramework.DL.Module.Controller;
 using BaseFramework.DL.Module.Http;
+using BaseFramework.DL.Repository.User;
 
 namespace App.AL.Controller.User {
     public class MeController : BaseController {
@@ -12,7 +13,8 @@ namespace App.AL.Controller.User {
         
         public MeController() {
             Get("/api/v1/me", _ => {
-                return HttpResponse.Item("user", new UserTransformer().Transform(CurrentRequest.User));
+                var me = UserRepository.Find(CurrentRequest.UserId);
+                return HttpResponse.Item("user", new UserTransformer().Transform(me));
             });
         }
     }

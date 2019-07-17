@@ -1,6 +1,6 @@
 using System;
+using BaseFramework.DL.Module.Misc;
 using BaseFramework.DL.Repository.User;
-using Core.DL.Module.Misc;
 using NUnit.Framework;
 using Tests.Utils.DB;
 using Tests.Utils.Fake.User;

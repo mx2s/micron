@@ -1,9 +1,9 @@
 using BaseFramework.DL.Middleware;
+using BaseFramework.DL.Module.Auth;
 using BaseFramework.DL.Module.Controller;
+using BaseFramework.DL.Module.Crypto;
 using BaseFramework.DL.Module.Http;
 using BaseFramework.DL.Repository.User;
-using Core.DL.Module.Auth;
-using Core.DL.Module.Crypto;
 using Nancy;
 using Newtonsoft.Json.Linq;
 

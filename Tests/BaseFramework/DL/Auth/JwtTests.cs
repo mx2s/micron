@@ -1,8 +1,8 @@
 using System;
-using Core.DL.Module.Auth;
+using BaseFramework.DL.Module.Auth;
 using NUnit.Framework;
 
-namespace Tests.Core.DL.Auth {
+namespace Tests.BaseFramework.DL.Auth {
     [TestFixture]
     public class JwtTests {
         [Test]

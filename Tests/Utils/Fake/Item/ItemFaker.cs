@@ -1,5 +1,5 @@
 using App.DL.Repository.Item;
-using Core.DL.Module.Misc;
+using BaseFramework.DL.Module.Misc;
 using ItemModel = App.DL.Model.Item.Item;
 
 namespace Tests.Utils.Fake.Item {

@@ -1,8 +1,8 @@
-using Core.DL.Module.Config;
+using BaseFramework.DL.Module.Config;
 using NUnit.Framework;
 using Tests.Utils.DB;
 
-namespace Tests.Core.DL.Module.Config {
+namespace Tests.BaseFramework.DL.Module.Config {
     [TestFixture]
     public class AppConfigTests {
         [SetUp]

@@ -1,7 +1,7 @@
-using Core.DL.Module.Crypto;
+using BaseFramework.DL.Module.Crypto;
 using NUnit.Framework;
 
-namespace Tests.Core.DL.Crypto {
+namespace Tests.BaseFramework.DL.Crypto {
     [TestFixture]
     public class EncryptorTests {
         [Test]
