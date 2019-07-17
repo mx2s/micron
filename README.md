@@ -2,14 +2,24 @@
 
 <a href="https://travis-ci.org/mxss/framework-base"><img src="https://travis-ci.org/mxss/framework-base.svg?branch=master" alt="TravisCI"></a>
 
-.net framework base (more info coming soon)
+## Description
+Minimal .net core framework based on three tier architecture, can be used as template for building API's
 
-## Tech summary:
+### Tech summary:
 **Supported databases:** PostgreSQL
 
-****
+***
 
-## Used tools:
+### System requirements:
+- .net core > 2.2
+- database (PostgreSql only)
+- PHP > 7.0 (for migrations)
+
+***
+
+### Used tools:
 **Database:**
+- Auth: [JWT(jwt-dotnet)](https://github.com/jwt-dotnet/jwt)
+- WebServer: [Nancy](https://github.com/NancyFx/Nancy)
 - ORM: [Dapper(StackExchange)](https://github.com/StackExchange/Dapper)
 - Migrations: [Phinx(CakePHP)](https://github.com/cakephp/phinx)
