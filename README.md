@@ -53,4 +53,4 @@ Example: App/bin/Debug/netcoreapp2.2/config/config.json
 You should be able to build with `dotnet build` and run app via for example: `dotnet App/bin/Debug/netcoreapp2.2/App.dll`
 
 # Contribution:
-Thank you for considering contributing to this repo. Feel free to submit any improvements / issues / refactoring etc. 
+Thank you for considering contributing to this repo. Feel free to submit any improvements / issues / refactoring / documentation etc. 
