@@ -33,3 +33,7 @@ Minimal .net core framework based on three tier architecture, can be used as tem
 - App/bin/%BUILD_TYPE%/netcoreapp2.2/config/config.json
 - **For unit tests**
 - Tests/bin/%BUILD_TYPE%/netcoreapp2.2/config/config.json
+Example: App/bin/Debug/netcoreapp2.2/config/config.json
+3. edit config files - fill db name / user / etc.
+**Migrating**
+4. ...
