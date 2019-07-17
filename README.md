@@ -47,4 +47,8 @@ Example: App/bin/Debug/netcoreapp2.2/config/config.json
 `php vendor/bin/phinx migrate -e testing` - to migrate with test database
 
 **Building & running project**
+
 You should be able to build with `dotnet build` and run app via for example: `dotnet App/bin/Debug/netcoreapp2.2/App.dll`
+
+# Contribution:
+Thank you for considering contributing to this repo. Feel free to submit any improvements / issues / refactoring etc. 
