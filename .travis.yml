@@ -27,7 +27,7 @@ before_script:
   - (cd migrations && php vendor/bin/phinx migrate -e testing)
 
   - mkdir -p Tests/bin/Debug/netcoreapp2.2
-  - cp .travis/config.json.testing Tests/bin/Debug/netcoreapp2.2/config.json
+  - cp .travis/config.json.testing Tests/bin/Debug/netcoreapp2.2/config/config.json
 
 script:
   - dotnet --version
