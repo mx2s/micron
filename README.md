@@ -5,7 +5,7 @@
 .net framework base (more info coming soon)
 
 ## Tech summary:
-**Supported databses:** PostgreSQL
+**Supported databases:** PostgreSQL
 
 ****
 
