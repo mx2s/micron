@@ -37,4 +37,11 @@ Example: App/bin/Debug/netcoreapp2.2/config/config.json
 3. edit config files - fill db name / user / etc.
 
 **Migrating**
-4. ...
+1. copy migrations/phinx.example.yml to migrations/phinx.yml
+2. edit phinx.yml - fill database user / password etc.
+3. install php & composer dependencies from migrations/composer.json
+4. run migrations (in migrations folder):
+
+`php vendor/bin/phinx migrate` - to migrate with default database (development)
+
+`php vendor/bin/phinx migrate -e testing` - to migrate with test database
