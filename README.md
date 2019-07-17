@@ -24,8 +24,6 @@ I've built this framework mostly for myself with all needed features out of the 
 ### Project structure:
 Foundation of the framework is located in [framework-base-core](https://github.com/mxss/framework-base-core) and loaded as submodule into Base project
 
-more info coming soon
-
 ***
 
 ### Used tools:
