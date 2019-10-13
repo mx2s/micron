@@ -45,6 +45,19 @@ public class ItemCrudController : BaseController {
     }
 }
 ```
+Example transformer
+```csharp
+public class ItemTransformer : BaseTransformer {
+    public override JObject Transform(object obj) {
+        var item = (ItemModel) obj;
+        return new JObject {
+            ["guid"] = item.guid,
+            ["title"] = item.title,
+            ["price"] = item.price,
+        };
+    }
+}
+```
 
 
 ### Tech summary:
