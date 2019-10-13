@@ -7,6 +7,59 @@ Minimal .net core framework based on three tier architecture, can be used as tem
 
 I've built this framework mostly for myself with all needed features out of the box, but this foundation can be more modular to have more potential use cases.
 
+
+## Features
+Example route with validation
+```csharp
+Get("/api/v1/item/get", _ => {
+    var errors = ValidationProcessor.Process(Request, new IValidatorRule[] {
+        new ExistsInTable("item_guid", "items", "guid"),
+    });
+    if (errors.Count > 0) {
+        return HttpResponse.Errors(errors);
+    }
+
+    return HttpResponse.Item("item", new ItemTransformer().Transform(
+        ItemRepository.FindByGuid(Request.Query["item_guid"])
+    ));
+});
+```
+Example controller with middleware (check JWT token)
+```csharp
+public class ItemCrudController : BaseController {
+    protected override IMiddleware[] Middleware() => new IMiddleware[] {
+        new JwtMiddleware()
+    };
+    
+    public ItemCrudController() {
+        Post("/api/v1/item/create", _ => {
+            var errors = ValidationProcessor.Process(Request, new IValidatorRule[] { });
+            if (errors.Count > 0) {
+                return HttpResponse.Errors(errors);
+            }
+
+            var item = ItemRepository.CreateAndGet((string) Request.Query["title"], (float) Request.Query["price"]);
+
+            return HttpResponse.Item("item", new ItemTransformer().Transform(item));
+        });
+    }
+}
+```
+Example transformer
+```csharp
+public class ItemTransformer : BaseTransformer {
+    public override JObject Transform(object obj) {
+        var item = (ItemModel) obj;
+        return new JObject {
+            ["guid"] = item.guid,
+            ["title"] = item.title,
+            ["price"] = item.price,
+        };
+    }
+}
+```
+
+
 ### Tech summary:
 **Supported databases:** PostgreSQL
 
