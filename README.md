@@ -60,8 +60,9 @@ public class ItemTransformer : BaseTransformer {
 ```
 
 ### Set up:
-1. build project
-2. copy config.example.json into: 
+1. restore nuget packages / load 'Base' git submodule
+2. build project
+3. copy config.example.json into: 
 - **For main app**
 - App/bin/%BUILD_TYPE%/netcoreapp2.2/config/config.json
 - **For unit tests**
@@ -69,7 +70,7 @@ public class ItemTransformer : BaseTransformer {
 
 **Example:** App/bin/Debug/netcoreapp2.2/config/config.json
 
-3. edit config files - fill db name / user / etc.
+4. edit config files - fill database name / user / etc.
 
 ### Tech summary:
 **Supported databases:** PostgreSQL
