@@ -59,6 +59,13 @@ public class ItemTransformer : BaseTransformer {
 }
 ```
 
+### Set up:
+1. build project
+2. copy config.example.json into: 
+- **For main app**
+- App/bin/%BUILD_TYPE%/netcoreapp2.2/config/config.json
+- **For unit tests**
+- Tests/bin/%BUILD_TYPE%/netcoreapp2.2/config/config.json
 
 ### Tech summary:
 **Supported databases:** PostgreSQL
@@ -69,8 +76,6 @@ public class ItemTransformer : BaseTransformer {
 - .net core > 2.2
 - database (PostgreSql only)
 - PHP > 7.0 (for migrations)
-
-
 
 ***
 
@@ -88,14 +93,7 @@ Foundation of the framework is located in [framework-base-core](https://github.c
 
 ***
 
-### Set up:
-1. build project
-2. copy config.example.json into: 
-- **For main app**
-- App/bin/%BUILD_TYPE%/netcoreapp2.2/config/config.json
-- **For unit tests**
-- Tests/bin/%BUILD_TYPE%/netcoreapp2.2/config/config.json
-Example: App/bin/Debug/netcoreapp2.2/config/config.json
+**Example:** App/bin/Debug/netcoreapp2.2/config/config.json
 3. edit config files - fill db name / user / etc.
 
 **Migrating**
