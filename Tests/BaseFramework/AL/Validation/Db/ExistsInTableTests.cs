@@ -11,10 +11,8 @@ namespace Tests.BaseFramework.AL.Validation.Db {
     [TestFixture]
     public class ExistsInTableTests {
         [SetUp]
-        public void SetUp() {
-            DbCleaner.TruncateAll();
-        }
-        
+        public void SetUp() => DbCleaner.TruncateAll();
+
         [Test]
         public void Process_ItemExists_Ok() {
             var item = ItemFaker.Create();

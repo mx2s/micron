@@ -1,15 +1,12 @@
 using App.DL.Repository.Item;
 using NUnit.Framework;
 using Tests.Utils.DB;
-using ItemModel = App.DL.Model.Item.Item;
 
 namespace Tests.BaseFramework.DL.Repository.Item {
     [TestFixture]
     public class ItemRepositoryTests {
         [SetUp]
-        public void SetUp() {
-            DbCleaner.TruncateAll();
-        }
+        public void SetUp() => DbCleaner.TruncateAll();
 
         [Test]
         public void Create_DataCorrect_Ok() {
