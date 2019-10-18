@@ -72,6 +72,21 @@ public class ItemTransformer : BaseTransformer {
 
 4. edit config files - fill database name / user / etc.
 
+
+**Migrating**
+1. copy migrations/phinx.example.yml to migrations/phinx.yml
+2. edit phinx.yml - fill database user / password etc.
+3. install php & composer dependencies from migrations/composer.json
+4. run migrations (in migrations folder):
+
+`php vendor/bin/phinx migrate` - to migrate with default database (development)
+
+`php vendor/bin/phinx migrate -e testing` - to migrate with test database
+
+***
+
+5. Run it! via dotnet `dotnet App/bin/Debug/netcoreapp2.2/App.dll`
+
 ### Tech summary:
 **Supported databases:** PostgreSQL
 
@@ -95,18 +110,6 @@ Foundation of the framework is located in [framework-base-core](https://github.c
 - WebServer: [Nancy](https://github.com/NancyFx/Nancy)
 - ORM: [Dapper(StackExchange)](https://github.com/StackExchange/Dapper)
 - Migrations: [Phinx(CakePHP)](https://github.com/cakephp/phinx)
-
-***
-
-**Migrating**
-1. copy migrations/phinx.example.yml to migrations/phinx.yml
-2. edit phinx.yml - fill database user / password etc.
-3. install php & composer dependencies from migrations/composer.json
-4. run migrations (in migrations folder):
-
-`php vendor/bin/phinx migrate` - to migrate with default database (development)
-
-`php vendor/bin/phinx migrate -e testing` - to migrate with test database
 
 **Building & running project**
 
