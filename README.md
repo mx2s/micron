@@ -67,6 +67,10 @@ public class ItemTransformer : BaseTransformer {
 - **For unit tests**
 - Tests/bin/%BUILD_TYPE%/netcoreapp2.2/config/config.json
 
+**Example:** App/bin/Debug/netcoreapp2.2/config/config.json
+
+3. edit config files - fill db name / user / etc.
+
 ### Tech summary:
 **Supported databases:** PostgreSQL
 
@@ -92,9 +96,6 @@ Foundation of the framework is located in [framework-base-core](https://github.c
 - Migrations: [Phinx(CakePHP)](https://github.com/cakephp/phinx)
 
 ***
-
-**Example:** App/bin/Debug/netcoreapp2.2/config/config.json
-3. edit config files - fill db name / user / etc.
 
 **Migrating**
 1. copy migrations/phinx.example.yml to migrations/phinx.yml
