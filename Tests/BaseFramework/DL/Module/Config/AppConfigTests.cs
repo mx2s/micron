@@ -6,9 +6,7 @@ namespace Tests.BaseFramework.DL.Module.Config {
     [TestFixture]
     public class AppConfigTests {
         [SetUp]
-        public void SetUp() {
-            DbCleaner.TruncateAll();
-        }
+        public void SetUp() => DbCleaner.TruncateAll();
 
         [Test]
         public void GetConnectionString_WithData_Ok() {

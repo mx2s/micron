@@ -6,13 +6,9 @@ namespace Tests.BaseFramework.DL.Model {
     [TestFixture]
     public class UserTests {
         [SetUp]
-        public void SetUp() {
-            DbCleaner.TruncateAll();
-        }
+        public void SetUp() => DbCleaner.TruncateAll();
 
         [Test]
-        public void Count_EmptyTable_Get0() {
-            Assert.AreEqual(0, User.Count());
-        }
+        public void Count_EmptyTable_Get0() => Assert.AreEqual(0, User.Count());
     }
 }

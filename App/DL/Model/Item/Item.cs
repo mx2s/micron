@@ -15,19 +15,19 @@ namespace App.DL.Model.Item {
         public decimal price;
 
         public static Item Find(int id)
-            => Connection().Query<Item>(
+            => Connection().QueryFirstOrDefault<Item>(
                 "SELECT * FROM items WHERE id = @id LIMIT 1", new {id}
-            ).FirstOrDefault();
+            );
 
         public static Item FindByGuid(string guid)
-            => Connection().Query<Item>(
+            => Connection().QueryFirstOrDefault<Item>(
                 "SELECT * FROM items WHERE guid = @guid LIMIT 1", new {guid}
-            ).FirstOrDefault();
-        
+            );
+
         public static Item FindByTitle(string title)
-            => Connection().Query<Item>(
+            => Connection().QueryFirstOrDefault<Item>(
                 "SELECT * FROM items WHERE title = @title LIMIT 1", new {title}
-            ).FirstOrDefault();
+            );
 
         public static int Create(string title, double price)
             => ExecuteScalarInt(
@@ -43,9 +43,9 @@ namespace App.DL.Model.Item {
         }
 
         public Item Refresh() => Find(id);
-        
+
         public static int Count() => ExecuteScalarInt("SELECT count(*) FROM items WHERE id = @id");
-        
+
         public void Delete() => ExecuteScalarInt("DELETE FROM items WHERE id = @id", new {id});
     }
 }

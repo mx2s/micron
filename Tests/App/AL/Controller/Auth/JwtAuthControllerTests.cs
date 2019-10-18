@@ -10,10 +10,8 @@ namespace Tests.App.AL.Controller.Auth {
     [TestFixture]
     public class JwtAuthControllerTests {
         [SetUp]
-        public void SetUp() {
-            DbCleaner.TruncateAll();
-        }
-        
+        public void SetUp() => DbCleaner.TruncateAll();
+
         [Test]
         public void Login_WithEmptyPassword_WithoutCrashing() {
             var user = UserFaker.Create();
@@ -24,7 +22,7 @@ namespace Tests.App.AL.Controller.Auth {
                 with.Query("email", user.email);
                 with.Query("password", null);
             }).Result;
-            
+
             Assert.AreEqual(HttpStatusCode.Unauthorized, result.StatusCode);
         }
 
@@ -32,11 +30,11 @@ namespace Tests.App.AL.Controller.Auth {
         public void Login_CorrectCredentials_LoggedIn() {
             var email = "testemail@root.com";
             var password = "test1234";
-            
+
             UserRepository.Create(email, "root", password);
-            
+
             var user = UserRepository.FindByEmail(email);
-            
+
             var browser = new Browser(new DefaultNancyBootstrapper());
 
             var result = browser.Get("/api/v1/login", with => {
@@ -44,7 +42,7 @@ namespace Tests.App.AL.Controller.Auth {
                 with.Query("email", user.email);
                 with.Query("password", password);
             }).Result;
-            
+
             var body = JObject.Parse(result.Body.AsString());
 
             Assert.AreEqual(HttpStatusCode.OK, result.StatusCode);
