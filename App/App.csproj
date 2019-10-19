@@ -6,19 +6,15 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="Dapper" Version="1.60.6" />
+      <PackageReference Include="Dapper" Version="2.0.30" />
+      <PackageReference Include="MicronCore" Version="0.3.0" />
       <PackageReference Include="Nancy" Version="2.0.0" />
-      <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
-      <PackageReference Include="NLog" Version="4.6.5" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <ProjectReference Include="..\Base\Base.csproj" />
+      <PackageReference Include="Newtonsoft.Json" Version="12.0.3-beta2" />
+      <PackageReference Include="NLog" Version="4.6.7" />
     </ItemGroup>
 
     <ItemGroup>
       <Folder Include="AL" />
-      <Folder Include="DL\Model" />
       <Folder Include="DL\Repository" />
       <Folder Include="PL" />
     </ItemGroup>
