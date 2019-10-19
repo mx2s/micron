@@ -1,6 +1,7 @@
 # Micron
 
 <a href="https://travis-ci.org/mxss/micron"><img src="https://travis-ci.org/mxss/micron.svg?branch=master" alt="TravisCI"></a>
+<a href="https://www.nuget.org/packages/MicronCore">NuGet Package (framework core)</a>
 
 ## Description
 Minimal .net core framework based on three tier architecture, can be used as template for building API's
