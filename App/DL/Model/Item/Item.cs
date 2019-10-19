@@ -1,11 +1,10 @@
 using System;
-using System.Linq;
 using Dapper;
 
 // ReSharper disable InconsistentNaming
 
 namespace App.DL.Model.Item {
-    public class Item : BaseFramework.DL.Model.Model {
+    public class Item : Micron.DL.Model.Model {
         public int id;
 
         public string guid;
