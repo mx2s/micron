@@ -61,7 +61,7 @@ public class ItemTransformer : BaseTransformer {
 ```
 
 ### Set up:
-1. restore nuget packages / load 'Base' git submodule
+1. restore nuget packages
 2. build project
 3. copy config.example.json into: 
 - **For main app**
