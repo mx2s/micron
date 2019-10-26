@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using App.DL.Repository.Item;
 using App.PL.Item;
@@ -12,65 +11,48 @@ using Nancy;
 
 namespace App.AL.Controller.Item
 {
-    public class ItemCrudController : BaseController
-    {
-        protected override IMiddleware[] Middleware() => new IMiddleware[]
-        {
+    public class ItemCrudController : BaseController {
+        protected override IMiddleware[] Middleware() => new IMiddleware[] {
             new JwtMiddleware()
         };
 
-        private static Response CreateResponse(object item)
-        {
-            var data = new ItemTransformer().Transform(item);
-            return HttpResponse.Item("item", data);
-        }
-
-        private IReadOnlyCollection<HttpError> ValidateRequest(IValidatorRule[] validatorRules = null)
-        {
-            if (validatorRules == null)
-            {
-                validatorRules = new IValidatorRule[]
-                {
+        private IReadOnlyCollection<HttpError> ValidateRequest(IValidatorRule[] validatorRules = null) {
+            if (validatorRules == null) {
+                validatorRules = new IValidatorRule[] {
                     new ExistsInTable("item_guid", "items", "guid"),
                 };
             }
+
             var errors = ValidationProcessor.Process(Request, validatorRules);
             return errors;
         }
 
-        public ItemCrudController()
-        {
-            Post("/api/v1/item/create", _ =>
-            {
+        public ItemCrudController() {
+            Post("/api/v1/item/create", _ => {
                 var errors = ValidateRequest(new IValidatorRule[] { });
-                if (errors.Count > 0)
-                {
+                if (errors.Count > 0) {
                     return HttpResponse.Errors(errors);
                 }
 
                 var item = ItemRepository.CreateAndGet((string) Request.Query["title"], (float) Request.Query["price"]);
 
-                return CreateResponse(item);
+                return ReturnOne(item);
             });
 
-            Get("/api/v1/item/get", _ =>
-            {
+            Get("/api/v1/item/get", _ => {
                 var errors = ValidateRequest();
 
-                if (errors.Count > 0)
-                {
+                if (errors.Count > 0) {
                     return HttpResponse.Errors(errors);
                 }
 
-                return CreateResponse(ItemRepository.FindByGuid(Request.Query["item_grid"]));
+                return ReturnOne(ItemRepository.FindByGuid(Request.Query["item_grid"]));
             });
 
-            Patch("/api/v1/item/edit", _ =>
-            {
+            Patch("/api/v1/item/edit", _ => {
                 var errors = ValidateRequest();
-                
-                if (errors.Count > 0)
-                {
+
+                if (errors.Count > 0) {
                     return HttpResponse.Errors(errors);
                 }
 
@@ -79,15 +61,13 @@ namespace App.AL.Controller.Item
                 item.price = (decimal?) Request.Query["price"] ?? item.price;
                 item = item.Save().Refresh();
 
-                return CreateResponse(item);
+                return ReturnOne(item);
             });
 
-            Delete("/api/v1/item/delete", _ =>
-            {
+            Delete("/api/v1/item/delete", _ => {
                 var errors = ValidateRequest();
-                
-                if (errors.Count > 0)
-                {
+
+                if (errors.Count > 0) {
                     return HttpResponse.Errors(errors);
                 }
 
@@ -95,8 +75,13 @@ namespace App.AL.Controller.Item
 
                 item.Delete();
 
-                return CreateResponse(item);
+                return ReturnOne(item);
             });
+        }
+
+        private static Response ReturnOne(DL.Model.Item.Item item, string key = "item") {
+            var data = new ItemTransformer().Transform(item);
+            return HttpResponse.Item(key, data);
         }
     }
 }
